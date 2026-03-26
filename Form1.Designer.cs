@@ -31,9 +31,9 @@
             lblTitle = new Label();
             txtHistory = new TextBox();
             txtDisplay = new TextBox();
-            button1 = new Button();
+            btnSign = new Button();
             btn0 = new Button();
-            button3 = new Button();
+            btnDot = new Button();
             btnEqual = new Button();
             btn1 = new Button();
             btn2 = new Button();
@@ -58,7 +58,7 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Times New Roman", 31.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = SystemColors.GrayText;
-            lblTitle.Location = new Point(63, 58);
+            lblTitle.Location = new Point(27, 38);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(700, 96);
             lblTitle.TabIndex = 0;
@@ -67,7 +67,7 @@
             // txtHistory
             // 
             txtHistory.Font = new Font("맑은 고딕", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            txtHistory.Location = new Point(63, 185);
+            txtHistory.Location = new Point(27, 181);
             txtHistory.Name = "txtHistory";
             txtHistory.ReadOnly = true;
             txtHistory.Size = new Size(722, 57);
@@ -76,52 +76,52 @@
             // txtDisplay
             // 
             txtDisplay.Font = new Font("맑은 고딕", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            txtDisplay.Location = new Point(63, 275);
+            txtDisplay.Location = new Point(27, 273);
             txtDisplay.Name = "txtDisplay";
             txtDisplay.ReadOnly = true;
             txtDisplay.Size = new Size(722, 78);
             txtDisplay.TabIndex = 2;
             txtDisplay.Text = "0";
             // 
-            // button1
+            // btnSign
             // 
-            button1.Font = new Font("굴림", 10.875F, FontStyle.Bold);
-            button1.Location = new Point(27, 829);
-            button1.Name = "button1";
-            button1.Size = new Size(150, 46);
-            button1.TabIndex = 3;
-            button1.Text = "+/-";
-            button1.UseVisualStyleBackColor = true;
+            btnSign.Font = new Font("굴림", 15F, FontStyle.Bold);
+            btnSign.Location = new Point(27, 829);
+            btnSign.Name = "btnSign";
+            btnSign.Size = new Size(150, 60);
+            btnSign.TabIndex = 3;
+            btnSign.Text = "+/-";
+            btnSign.UseVisualStyleBackColor = true;
             // 
             // btn0
             // 
-            btn0.Font = new Font("굴림", 10.875F, FontStyle.Bold);
+            btn0.Font = new Font("굴림", 15F, FontStyle.Bold);
             btn0.ForeColor = SystemColors.Highlight;
             btn0.Location = new Point(213, 829);
             btn0.Name = "btn0";
-            btn0.Size = new Size(150, 46);
+            btn0.Size = new Size(150, 60);
             btn0.TabIndex = 4;
             btn0.Text = "0";
             btn0.UseVisualStyleBackColor = true;
             btn0.Click += NumberButton_Click;
             // 
-            // button3
+            // btnDot
             // 
-            button3.Font = new Font("굴림", 10.875F, FontStyle.Bold);
-            button3.Location = new Point(399, 829);
-            button3.Name = "button3";
-            button3.Size = new Size(150, 46);
-            button3.TabIndex = 5;
-            button3.Text = ".";
-            button3.UseVisualStyleBackColor = true;
+            btnDot.Font = new Font("굴림", 15F, FontStyle.Bold);
+            btnDot.Location = new Point(399, 829);
+            btnDot.Name = "btnDot";
+            btnDot.Size = new Size(150, 60);
+            btnDot.TabIndex = 5;
+            btnDot.Text = ".";
+            btnDot.UseVisualStyleBackColor = true;
             // 
             // btnEqual
             // 
-            btnEqual.Font = new Font("굴림", 10.875F, FontStyle.Bold);
+            btnEqual.Font = new Font("굴림", 15F, FontStyle.Bold);
             btnEqual.ForeColor = SystemColors.ControlText;
             btnEqual.Location = new Point(599, 829);
             btnEqual.Name = "btnEqual";
-            btnEqual.Size = new Size(150, 46);
+            btnEqual.Size = new Size(150, 60);
             btnEqual.TabIndex = 6;
             btnEqual.Text = "=";
             btnEqual.UseVisualStyleBackColor = true;
@@ -129,11 +129,11 @@
             // 
             // btn1
             // 
-            btn1.Font = new Font("굴림", 10.875F, FontStyle.Bold);
+            btn1.Font = new Font("굴림", 15F, FontStyle.Bold);
             btn1.ForeColor = SystemColors.Highlight;
-            btn1.Location = new Point(27, 742);
+            btn1.Location = new Point(27, 724);
             btn1.Name = "btn1";
-            btn1.Size = new Size(150, 46);
+            btn1.Size = new Size(150, 60);
             btn1.TabIndex = 7;
             btn1.Text = "1";
             btn1.UseVisualStyleBackColor = true;
@@ -141,11 +141,11 @@
             // 
             // btn2
             // 
-            btn2.Font = new Font("굴림", 10.875F, FontStyle.Bold);
+            btn2.Font = new Font("굴림", 15F, FontStyle.Bold);
             btn2.ForeColor = SystemColors.Highlight;
-            btn2.Location = new Point(213, 742);
+            btn2.Location = new Point(213, 724);
             btn2.Name = "btn2";
-            btn2.Size = new Size(150, 46);
+            btn2.Size = new Size(150, 60);
             btn2.TabIndex = 8;
             btn2.Text = "2";
             btn2.UseVisualStyleBackColor = true;
@@ -153,11 +153,11 @@
             // 
             // btn3
             // 
-            btn3.Font = new Font("굴림", 10.875F, FontStyle.Bold);
+            btn3.Font = new Font("굴림", 15F, FontStyle.Bold);
             btn3.ForeColor = SystemColors.Highlight;
-            btn3.Location = new Point(399, 742);
+            btn3.Location = new Point(399, 724);
             btn3.Name = "btn3";
-            btn3.Size = new Size(150, 46);
+            btn3.Size = new Size(150, 60);
             btn3.TabIndex = 9;
             btn3.Text = "3";
             btn3.UseVisualStyleBackColor = true;
@@ -165,11 +165,11 @@
             // 
             // btnPlus
             // 
-            btnPlus.Font = new Font("굴림", 10.875F, FontStyle.Bold);
+            btnPlus.Font = new Font("굴림", 15F, FontStyle.Bold);
             btnPlus.ForeColor = Color.Red;
-            btnPlus.Location = new Point(599, 742);
+            btnPlus.Location = new Point(599, 724);
             btnPlus.Name = "btnPlus";
-            btnPlus.Size = new Size(150, 46);
+            btnPlus.Size = new Size(150, 60);
             btnPlus.TabIndex = 10;
             btnPlus.Text = "+";
             btnPlus.UseVisualStyleBackColor = true;
@@ -177,11 +177,11 @@
             // 
             // btn4
             // 
-            btn4.Font = new Font("굴림", 10.875F, FontStyle.Bold);
+            btn4.Font = new Font("굴림", 15F, FontStyle.Bold);
             btn4.ForeColor = SystemColors.Highlight;
-            btn4.Location = new Point(27, 653);
+            btn4.Location = new Point(27, 629);
             btn4.Name = "btn4";
-            btn4.Size = new Size(150, 46);
+            btn4.Size = new Size(150, 60);
             btn4.TabIndex = 11;
             btn4.Text = "4";
             btn4.UseVisualStyleBackColor = true;
@@ -189,11 +189,11 @@
             // 
             // btn5
             // 
-            btn5.Font = new Font("굴림", 10.875F, FontStyle.Bold);
+            btn5.Font = new Font("굴림", 15F, FontStyle.Bold);
             btn5.ForeColor = SystemColors.Highlight;
-            btn5.Location = new Point(213, 653);
+            btn5.Location = new Point(213, 629);
             btn5.Name = "btn5";
-            btn5.Size = new Size(150, 46);
+            btn5.Size = new Size(150, 60);
             btn5.TabIndex = 12;
             btn5.Text = "5";
             btn5.UseVisualStyleBackColor = true;
@@ -201,11 +201,11 @@
             // 
             // btn6
             // 
-            btn6.Font = new Font("굴림", 10.875F, FontStyle.Bold);
+            btn6.Font = new Font("굴림", 15F, FontStyle.Bold);
             btn6.ForeColor = SystemColors.Highlight;
-            btn6.Location = new Point(399, 653);
+            btn6.Location = new Point(399, 629);
             btn6.Name = "btn6";
-            btn6.Size = new Size(150, 46);
+            btn6.Size = new Size(150, 60);
             btn6.TabIndex = 13;
             btn6.Text = "6";
             btn6.UseVisualStyleBackColor = true;
@@ -213,11 +213,11 @@
             // 
             // btnMinus
             // 
-            btnMinus.Font = new Font("굴림", 10.875F, FontStyle.Bold);
+            btnMinus.Font = new Font("굴림", 15F, FontStyle.Bold);
             btnMinus.ForeColor = Color.Red;
-            btnMinus.Location = new Point(599, 653);
+            btnMinus.Location = new Point(599, 629);
             btnMinus.Name = "btnMinus";
-            btnMinus.Size = new Size(150, 46);
+            btnMinus.Size = new Size(150, 60);
             btnMinus.TabIndex = 14;
             btnMinus.Text = "-";
             btnMinus.UseVisualStyleBackColor = true;
@@ -225,11 +225,11 @@
             // 
             // btn7
             // 
-            btn7.Font = new Font("굴림", 10.875F, FontStyle.Bold);
+            btn7.Font = new Font("굴림", 15F, FontStyle.Bold);
             btn7.ForeColor = SystemColors.Highlight;
-            btn7.Location = new Point(27, 569);
+            btn7.Location = new Point(27, 533);
             btn7.Name = "btn7";
-            btn7.Size = new Size(150, 46);
+            btn7.Size = new Size(150, 60);
             btn7.TabIndex = 15;
             btn7.Text = "7";
             btn7.UseVisualStyleBackColor = true;
@@ -237,11 +237,11 @@
             // 
             // btn8
             // 
-            btn8.Font = new Font("굴림", 10.875F, FontStyle.Bold);
+            btn8.Font = new Font("굴림", 15F, FontStyle.Bold);
             btn8.ForeColor = SystemColors.Highlight;
-            btn8.Location = new Point(213, 569);
+            btn8.Location = new Point(213, 533);
             btn8.Name = "btn8";
-            btn8.Size = new Size(150, 46);
+            btn8.Size = new Size(150, 60);
             btn8.TabIndex = 16;
             btn8.Text = "8";
             btn8.UseVisualStyleBackColor = true;
@@ -249,11 +249,11 @@
             // 
             // btn9
             // 
-            btn9.Font = new Font("굴림", 10.875F, FontStyle.Bold);
+            btn9.Font = new Font("굴림", 15F, FontStyle.Bold);
             btn9.ForeColor = SystemColors.Highlight;
-            btn9.Location = new Point(399, 569);
+            btn9.Location = new Point(399, 533);
             btn9.Name = "btn9";
-            btn9.Size = new Size(150, 46);
+            btn9.Size = new Size(150, 60);
             btn9.TabIndex = 17;
             btn9.Text = "9";
             btn9.UseVisualStyleBackColor = true;
@@ -261,11 +261,11 @@
             // 
             // btnMultiply
             // 
-            btnMultiply.Font = new Font("굴림", 10.875F, FontStyle.Bold);
+            btnMultiply.Font = new Font("굴림", 15F, FontStyle.Bold);
             btnMultiply.ForeColor = Color.Red;
-            btnMultiply.Location = new Point(599, 569);
+            btnMultiply.Location = new Point(599, 533);
             btnMultiply.Name = "btnMultiply";
-            btnMultiply.Size = new Size(150, 46);
+            btnMultiply.Size = new Size(150, 60);
             btnMultiply.TabIndex = 18;
             btnMultiply.Text = "×";
             btnMultiply.UseVisualStyleBackColor = true;
@@ -273,10 +273,10 @@
             // 
             // btnCE
             // 
-            btnCE.Font = new Font("굴림", 10.875F, FontStyle.Bold);
-            btnCE.Location = new Point(27, 489);
+            btnCE.Font = new Font("굴림", 15F, FontStyle.Bold);
+            btnCE.Location = new Point(27, 433);
             btnCE.Name = "btnCE";
-            btnCE.Size = new Size(150, 46);
+            btnCE.Size = new Size(150, 60);
             btnCE.TabIndex = 19;
             btnCE.Text = "CE";
             btnCE.UseVisualStyleBackColor = true;
@@ -284,10 +284,10 @@
             // 
             // btnC
             // 
-            btnC.Font = new Font("굴림", 10.875F, FontStyle.Bold);
-            btnC.Location = new Point(213, 489);
+            btnC.Font = new Font("굴림", 15F, FontStyle.Bold);
+            btnC.Location = new Point(213, 433);
             btnC.Name = "btnC";
-            btnC.Size = new Size(150, 46);
+            btnC.Size = new Size(150, 60);
             btnC.TabIndex = 20;
             btnC.Text = "C";
             btnC.UseVisualStyleBackColor = true;
@@ -295,10 +295,10 @@
             // 
             // btnDel
             // 
-            btnDel.Font = new Font("굴림", 10.875F, FontStyle.Bold);
-            btnDel.Location = new Point(399, 489);
+            btnDel.Font = new Font("굴림", 15F, FontStyle.Bold);
+            btnDel.Location = new Point(399, 433);
             btnDel.Name = "btnDel";
-            btnDel.Size = new Size(150, 46);
+            btnDel.Size = new Size(150, 60);
             btnDel.TabIndex = 21;
             btnDel.Text = "del";
             btnDel.UseVisualStyleBackColor = true;
@@ -306,11 +306,11 @@
             // 
             // btnDivide
             // 
-            btnDivide.Font = new Font("굴림", 10.875F, FontStyle.Bold);
+            btnDivide.Font = new Font("굴림", 15F, FontStyle.Bold);
             btnDivide.ForeColor = Color.Red;
-            btnDivide.Location = new Point(599, 489);
+            btnDivide.Location = new Point(599, 433);
             btnDivide.Name = "btnDivide";
-            btnDivide.Size = new Size(150, 46);
+            btnDivide.Size = new Size(150, 60);
             btnDivide.TabIndex = 22;
             btnDivide.Text = "÷";
             btnDivide.UseVisualStyleBackColor = true;
@@ -338,14 +338,16 @@
             Controls.Add(btn2);
             Controls.Add(btn1);
             Controls.Add(btnEqual);
-            Controls.Add(button3);
+            Controls.Add(btnDot);
             Controls.Add(btn0);
-            Controls.Add(button1);
+            Controls.Add(btnSign);
             Controls.Add(txtDisplay);
             Controls.Add(txtHistory);
             Controls.Add(lblTitle);
+            KeyPreview = true;
             Name = "Form1";
             Text = " ";
+            KeyDown += Form1_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -355,9 +357,9 @@
         private Label lblTitle;
         private TextBox txtHistory;
         private TextBox txtDisplay;
-        private Button button1;
+        private Button btnSign;
         private Button btn0;
-        private Button button3;
+        private Button btnDot;
         private Button btnEqual;
         private Button btn1;
         private Button btn2;

@@ -5,6 +5,10 @@ namespace SimpleCalculator
         private string firstInput = "";
         private string secondInput = "";
         private string currentOperator = "";
+
+        private string lastOperator = "";
+        private string lastSecondInput = "";
+        private bool isCalculated = false;
         public Form1()
         {
             InitializeComponent();
@@ -13,6 +17,13 @@ namespace SimpleCalculator
         }
         private void UpdateScreen()
         {
+            string displayOperator = currentOperator;
+
+            if (currentOperator == "*")
+                displayOperator = "×";
+            else if (currentOperator == "/")
+                displayOperator = "÷";
+
             if (currentOperator == "")
             {
                 txtHistory.Text = firstInput;
@@ -20,16 +31,12 @@ namespace SimpleCalculator
             }
             else
             {
-                string displayOperator = currentOperator;
-
-                if (currentOperator == "*")
-                    displayOperator = "×";
-                else if (currentOperator == "/")
-                    displayOperator = "÷";
-
                 txtHistory.Text = $"{firstInput} {displayOperator} {secondInput}".Trim();
-                txtDisplay.Text = secondInput == "" ? "0" : secondInput;
+                txtDisplay.Text = secondInput == "" ? firstInput : secondInput;
             }
+
+            if (txtDisplay.Text == "")
+                txtDisplay.Text = "0";
 
         }
         private void NumberButton_Click(object sender, EventArgs e)
@@ -181,6 +188,15 @@ namespace SimpleCalculator
         private void btnDel_Click(object sender, EventArgs e)
         {
             DeleteLastChar();
+        }
+        private string FormatNumber(double value)
+        {
+            return value.ToString("0.###############");
+        }
+       
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            
         }
     }
 }
