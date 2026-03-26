@@ -20,7 +20,8 @@ namespace SimpleCalculator
             }
             else
             {
-                txtHistory.Text = $"{firstInput} {currentOperator} {secondInput}".Trim();
+                string displayOp = GetDisplayOperator();
+                txtHistory.Text = $"{firstInput} {displayOp} {secondInput}".Trim();
                 txtDisplay.Text = secondInput == "" ? "0" : secondInput;
             }
 
@@ -44,28 +45,81 @@ namespace SimpleCalculator
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
-            if (firstInput == "")
-                return;
-
-            currentOperator = "+";
-            UpdateScreen();
+            SetOperator("+");
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
         {
-           if (firstInput == "" || secondInput == "" || currentOperator != "+")
+            if (firstInput == "" || secondInput == "" || currentOperator == "")
                 return;
 
-            int n1 = int.Parse(firstInput);
-            int n2 = int.Parse(secondInput);
-            int result = n1 + n2;
+            double n1 = double.Parse(firstInput);
+            double n2 = double.Parse(secondInput);
+            double result = 0;
 
-            txtHistory.Text = $"{n1} + {n2} = {result}";
+            switch (currentOperator)
+            {
+                case "+":
+                    result = n1 + n2;
+                    break;
+                case "-":
+                    result = n1 - n2;
+                    break;
+                case "*":
+                    result = n1 * n2;
+                    break;
+                case "/":
+                    if (n2 == 0)
+                    {
+                        MessageBox.Show("0으로 나눌 수 없습니다.");
+                        return;
+                    }
+                    result = n1 / n2;
+                    break;
+            }
+
+            string displayOp = GetDisplayOperator();
+            txtHistory.Text = $"{firstInput} {displayOp} {secondInput} = {result}";
             txtDisplay.Text = result.ToString();
 
             firstInput = result.ToString();
             secondInput = "";
             currentOperator = "";
+        }
+        private void SetOperator(string op)
+        {
+            if (firstInput == "")
+                return;
+
+            if (secondInput != "")
+                return;
+
+            currentOperator = op;
+            UpdateScreen();
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            SetOperator("-");
+        }
+
+        private void btnMultiply_Click(object sender, EventArgs e)
+        {
+            SetOperator("*");
+        }
+
+        private void btnDivide_Click(object sender, EventArgs e)
+        {
+            SetOperator("/");
+        }
+        private string GetDisplayOperator()
+        {
+            if (currentOperator == "*")
+                return "×";
+            if (currentOperator == "/")
+                return "÷";
+
+            return currentOperator;
         }
     }
 }
