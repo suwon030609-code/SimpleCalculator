@@ -20,8 +20,14 @@ namespace SimpleCalculator
             }
             else
             {
-                string displayOp = GetDisplayOperator();
-                txtHistory.Text = $"{firstInput} {displayOp} {secondInput}".Trim();
+                string displayOperator = currentOperator;
+
+                if (currentOperator == "*")
+                    displayOperator = "×";
+                else if (currentOperator == "/")
+                    displayOperator = "÷";
+
+                txtHistory.Text = $"{firstInput} {displayOperator} {secondInput}".Trim();
                 txtDisplay.Text = secondInput == "" ? "0" : secondInput;
             }
 
@@ -120,6 +126,61 @@ namespace SimpleCalculator
                 return "÷";
 
             return currentOperator;
+        }
+        private void ClearAll()
+        {
+            firstInput = "";
+            secondInput = "";
+            currentOperator = "";
+
+            txtHistory.Text = "";
+            txtDisplay.Text = "0";
+        }
+        private void ClearEntry()
+        {
+            if (currentOperator == "")
+            {
+                firstInput = "";
+            }
+            else
+            {
+                secondInput = "";
+            }
+
+            UpdateScreen();
+        }
+        private void DeleteLastChar()
+        {
+            if (currentOperator == "")
+            {
+                if (firstInput.Length > 0)
+                {
+                    firstInput = firstInput.Substring(0, firstInput.Length - 1);
+                }
+            }
+            else
+            {
+                if (secondInput.Length > 0)
+                {
+                    secondInput = secondInput.Substring(0, secondInput.Length - 1);
+                }
+            }
+
+            UpdateScreen();
+        }
+        private void btnCE_Click(object sender, EventArgs e)
+        {
+            ClearEntry();
+        }
+
+        private void btnC_Click(object sender, EventArgs e)
+        {
+            ClearAll();
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            DeleteLastChar();
         }
     }
 }
